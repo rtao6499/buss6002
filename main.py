@@ -1,4 +1,4 @@
-import pandas as ps
+import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -29,7 +29,7 @@ x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.
 model = LogisticRegression()
 
 # Fit the model on our training data
-model.fit(x_train, y_test)
+model.fit(x_train, y_train)
 
 # Find how well we do on a testing set
 accuracy_score = model.score(x_test, y_test)
@@ -42,4 +42,6 @@ y_pred = model_2.predict(x_test)
 print(accuracy_score(y_pred, y_test))
 
 # TODO: Print the confusion matrix
-print(.....)
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_test, y_pred)
+
